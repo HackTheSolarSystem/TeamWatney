@@ -2,12 +2,12 @@
 Getting weather data for Watney!
 
 # Members
-* Brandon Liu [@bdon](github.com/bdon)
-* Alex Kramer [@mitochondrion](github.com/mitochondrion)
-* James Somers [@jsom](github.com/jsom)
-* Ventrice Lam [@ventersaurus](github.com/ventersaurus)
-* Ming Liu [@mingenuity](github.com/mingenuity)
-* Karoline Dubin [@karolinedubin](github.com/karolinedubin)
+* Brandon Liu [@bdon](https://github.com/bdon)
+* Alex Kramer [@mitochondrion](https://github.com/mitochondrion)
+* James Somers [@jsom](https://github.com/jsom)
+* Ventrice Lam [@ventersaurus](https://github.com/ventersaurus)
+* Ming Liu [@mingenuity](https://github.com/mingenuity)
+* Karoline Dubin [@karolinedubin](https://github.com/karolinedubin)
 
 
 Challenge: Partly Cloudy Skies on Earth and Mars, use OpenSpace's globebrowsing module to visualize weather on Mars and to create a pipeline to get this data from NASA into OpenSpace.
