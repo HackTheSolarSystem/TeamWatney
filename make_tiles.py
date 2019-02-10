@@ -9,7 +9,6 @@ import datetime
 T = 512
 
 start_date = datetime.datetime.strptime("2019-01-01","%Y-%m-%d")
-print(start_date)
 
 pathlib.Path("output/jpeg/").mkdir(parents=True, exist_ok=True)
 for g in glob.glob("sources/*.tiff"):
@@ -23,14 +22,13 @@ for j in glob.glob("output/jpeg/*.jpg"):
   index = int(os.path.splitext(os.path.basename(j))[0])
   im = Image.open(j)
   date = start_date + datetime.timedelta(days=index)
-  print(im)
-  t = im.copy()
-  p = pow(2,0)
-  t2 = t.resize((T * p,T * p),Image.LANCZOS)
-  dirname = "output/tiles/{0}/{1}/{2}".format(date.strftime("%Y-%m-%d"),0,0)
-  pathlib.Path(dirname).mkdir(parents=True, exist_ok=True)
-  t2.save(dirname + "/0.jpg", "JPEG")
-
-
-
-
+  for z in range(0,5):
+    t = im.copy()
+    p = pow(2,z)
+    t2 = t.resize((T * p,T * p),Image.LANCZOS)
+    for x in range(0,p):
+      for y in range(0,p):
+        tile = t2.crop((T*x,T*y,T*(x+1),T*(y+1)))
+        dirname = "output/tiles/{0}/{1}/{2}".format(date.strftime("%Y-%m-%d"),z,x)
+        pathlib.Path(dirname).mkdir(parents=True, exist_ok=True)
+        tile.save(dirname + "/{0}.jpg".format(y), "JPEG")
