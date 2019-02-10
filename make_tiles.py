@@ -22,13 +22,14 @@ for j in glob.glob("output/jpeg/*.jpg"):
   index = int(os.path.splitext(os.path.basename(j))[0])
   im = Image.open(j)
   date = start_date + datetime.timedelta(days=index)
-  for z in range(0,5):
+  for z in range(0,4):
     t = im.copy()
     p = pow(2,z)
-    t2 = t.resize((T * p,T * p),Image.LANCZOS)
-    for x in range(0,p):
+    t2 = t.resize((T * p*2,T * p),Image.LANCZOS)
+    for x in range(0,p*2):
       for y in range(0,p):
+        print(z,x,y)
         tile = t2.crop((T*x,T*y,T*(x+1),T*(y+1)))
-        dirname = "output/tiles/{0}/{1}/{2}".format(date.strftime("%Y-%m-%d"),z,x)
+        dirname = "output/tiles/{0}/{1}/{2}".format(date.strftime("%Y-%m-%d"),z,y)
         pathlib.Path(dirname).mkdir(parents=True, exist_ok=True)
-        tile.save(dirname + "/{0}.jpg".format(y), "JPEG")
+        tile.save(dirname + "/{0}.jpg".format(x), "JPEG")
