@@ -11,14 +11,13 @@ T = 512
 start_date = datetime.datetime.strptime("2019-01-01","%Y-%m-%d")
 
 pathlib.Path("output/jpeg/").mkdir(parents=True, exist_ok=True)
-for g in glob.glob("sources/*.tiff"):
-  m = re.search("sources/B20_day(\d{2})_resx2.tiff",g)
-  num = int(m.group(1))
-  fpath = "output/jpeg/{0}.jpg".format(num)
+
+for index, g in enumerate(sorted(glob.glob("sources/*.tiff"))):
+  fpath = "output/jpeg/{0}.jpg".format(index)
   if not os.path.isfile(fpath):
     subprocess.check_call(['gdal_translate','-of','JPEG',g,fpath])
 
-for j in glob.glob("output/jpeg/*.jpg"):
+for j in sorted(glob.glob("output/jpeg/*.jpg")):
   index = int(os.path.splitext(os.path.basename(j))[0])
   im = Image.open(j)
   date = start_date + datetime.timedelta(days=index)
