@@ -1,8 +1,6 @@
 # PartlyCloudyTeam
+TEAM WATNEY
 Getting weather data for Watney!
-
-Members:
-Brandon Liu, Alex Kramer, James Somers, Ventrice Lam, Ming Liu, Karoline Dubin
 
 Challenge: Partly Cloudy Skies on Earth and Mars, use OpenSpace's globebrowsing module to visualize weather on Mars and to create a pipeline to get this data from NASA into OpenSpace.
 
@@ -13,3 +11,6 @@ The data source used: Mars Color Imager (MARCI) from USGS.gov for daily maps of 
 Our python script converts timestamped images to WMS tile directory, and we created an OpenSpace Temporal Layer XML to show the weather data. 
 
 An intereting issue: some of the satellite data we pulled had was still raw, and it took time to realize these were unprocessed because of the government shutdown. If the government remained shutdown, the servers where we pulled images from would not be working. This presents an interesting issue for open source science: how to handle missing data and prevent against future data gaps.
+
+Members:
+Brandon Liu, Alex Kramer, James Somers, Ventrice Lam, Ming Liu, Karoline Dubin
