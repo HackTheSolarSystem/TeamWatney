@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageOps
 import pathlib
 import glob
 import subprocess
@@ -19,7 +19,7 @@ for index, g in enumerate(sorted(glob.glob("sources/*.tiff"))):
 
 for j in sorted(glob.glob("output/jpeg/*.jpg")):
   index = int(os.path.splitext(os.path.basename(j))[0])
-  im = Image.open(j)
+  im = ImageOps.flip(Image.open(j))
   date = start_date + datetime.timedelta(days=index)
   for z in range(0,4):
     t = im.copy()
