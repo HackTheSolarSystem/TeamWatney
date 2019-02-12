@@ -1,5 +1,7 @@
 ## TeamWatney
-Getting weather data for Watney!
+Getting weather data for Watney into OpenSpace!
+
+![Animation](animation.gif)
 
 ### Addressing [Partly Cloudy Skies on Earth and Mars](https://github.com/amnh/HackTheSolarSystem/wiki/Partly-Cloudy-Skies-on-Earth-and-Mars)
 
@@ -19,6 +21,8 @@ Use OpenSpace's globebrowsing module to visualize weather on Mars and to create 
 Our solution improves on existing Temporal WMS data pipeline in OpenSpace. We plan on working with AMNH to host data so anyone can view it immediately. The pipeline we created is general purpose for any planet and any temporal image dataset. Our data flow is a significant improvement from the existing method to get temporal data into OpenSpace. We also added a zoom control patch to OpenSpace v 0.13 for faster flying around space!
 
 The data source used: Mars Color Imager (MARCI) from USGS.gov for daily maps of the Martian atmosphere. Images pulled are converted to JPEG tiles using the GDAL toolchain and Python Imaging Library.
+
+![Tiles](mosaic.jpg)
 
 Our python script converts timestamped images to WMS tile directories, and we created an OpenSpace Temporal Tile Layer XML to show the weather data. 
 
