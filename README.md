@@ -33,5 +33,11 @@ An interesting issue: some of the satellite data we pulled had was still raw, an
 * GDAL/OGR 2+
 * Python 3
 * OpenSpace 0.12+
+* run make_tiles.py on a `source` directory of TIFFs, to create a `output/tiles` directory.
+* Serve `output/tiles` with any web server. No Apache modules required!
+
+### Todo
+
+* Dates are synthetic and hardcoded to 2019-01-01 instead of the real date from the XML, sometime in 2008.
 
 
